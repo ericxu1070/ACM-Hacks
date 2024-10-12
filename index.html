@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Energy Footprint Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Energy Footprint Calculator</h1>
+    <form id="energyForm">
+      <label for="kwh">Enter your electricity usage (kWh per month):</label>
+      <input type="number" id="kwh" name="kwh" min="0" required>
+      <button type="submit">Calculate</button>
+    </form>
+
+    <div id="result" class="result hidden">
+      <p id="footprint"></p>
+      <p id="recommendation"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
