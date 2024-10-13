@@ -37,15 +37,15 @@ body::before {
   bottom: 0;
   left: -100px;  /* Start off-screen */
   height: 80px;
-  animation: move-horizontal 5s linear infinite;  /* Animation with 5-second duration */
+  animation: move-horizontal 10s linear infinite;  /* Animation with 5-second duration */
 }
 
 @keyframes move-horizontal {
   0% {
-    left: -100px;  /* Start off-screen on the left */
+    right: -100px;  /* Start off-screen on the left */
   }
   100% {
-    left: 100%;  /* Move off-screen on the right */
+    right: 100%;  /* Move off-screen on the right */
   }
 }
 
