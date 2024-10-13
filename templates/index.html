@@ -12,6 +12,9 @@
     <form id="energyForm">
       <label for="kwh">Enter your electricity usage (kWh per month):</label>
       <input type="number" id="kwh" name="kwh" min="0" required>
+      <div class="slidecontainer">
+  <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+</div>
       <button type="submit">Calculate</button>
     </form>
 
@@ -24,7 +27,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
-<div class="slidecontainer">
-  <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-</div>
