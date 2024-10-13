@@ -1,0 +1,37 @@
+document.addEventListener('DOMContentLoaded', function() {
+  const energyForm = document.getElementById('energyForm');
+  const resultDiv = document.getElementById('result');
+  const footprintP = document.getElementById('footprint');
+  const recommendationP = document.getElementById('recommendation');
+  const slider = document.getElementById('myRange');
+  const rangeValue = document.getElementById('rangeValue');
+
+  // Update range value display as slider moves
+  slider.oninput = function() {
+    rangeValue.textContent = this.value;
+  };
+
+  // Handle form submission and calculate energy footprint
+  energyForm.addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form from refreshing the page
+    
+    const kwhUsage = parseFloat(document.getElementById('kwh').value);
+    const carbonIntensity = parseFloat(slider.value);
+    
+    if (kwhUsage && carbonIntensity) {
+      const energyFootprint = (kwhUsage * carbonIntensity).toFixed(2); // CO2 footprint in g
+      const footprintInKg = (energyFootprint / 1000).toFixed(2); // Convert to kg
+      
+      footprintP.textContent = `Your energy footprint is ${footprintInKg} kg of CO2 per month.`;
+      
+      // Example recommendation based on the footprint
+      if (footprintInKg > 500) {
+        recommendationP.textContent = "Your footprint is quite high. Consider using energy-saving appliances.";
+      } else {
+        recommendationP.textContent = "Your footprint is within a reasonable range. Keep up the good work!";
+      }
+
+      resultDiv.classList.remove('hidden');
+    }
+  });
+});
